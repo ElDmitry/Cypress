@@ -1,4 +1,0 @@
-node_modules
-.prettierrc
-jest.config.ts
-package-lock.json
