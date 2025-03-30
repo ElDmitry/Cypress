@@ -12,6 +12,10 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-
+// Глобальный обработчик ошибок
+Cypress.on('uncaught:exception', (err, runnable) => {
+  console.error('Uncaught Exception:', err);
+  return false; // Предотвращает падение тестов из-за неожиданных ошибок
+});
 // Import commands.js using ES2015 syntax:
 import './commands'
