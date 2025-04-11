@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "cypress": "^14.2.0",
+    "cypress-dotenv": "^3.0.1",
+    "dotenv": "^16.4.7",
+    "faker": "^6.6.6",
+    "fs": "^0.0.1-security",
+    "node": "^20.19.0"
+  },
+  "scripts": {
+    "cypress:open": "npx cypress open"
+  }
+}

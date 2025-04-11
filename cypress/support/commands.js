@@ -42,4 +42,23 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   return originalFn(element, text, options)
 });
 
+Cypress.Commands.add('createExpense', (carId, mileage, liters, totalCost) => {
+  cy.request({
+    method: 'POST',
+    url: `https://qauto.forstudy.space/api/expenses`,
+    body: {
+      "carId": carId,
+      "reportedAt": new Date().toISOString(),
+      "mileage": mileage,
+      "liters": liters,
+      "totalCost": totalCost,
+      "forceMileage": false
+    },
+    failOnStatusCode: true,  
+    timeout: 10000,
+    responseTimeout: 30000,
+    retryOnNetworkFailure: true,
+    retryOnStatusCodeFailure: true,
+  });
+});
 import './commands'
